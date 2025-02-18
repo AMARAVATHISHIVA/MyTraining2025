@@ -1,0 +1,34 @@
+root@ashwinprashant:/tmp/prasad# history
+    1  cd /
+    2  ls
+    3  cd tmp/
+    4  ls
+    5  touch kartik
+    6  ls
+    7  mkdir prasad
+    8  ls
+    9  cd prasad/
+   10  ls
+   11  pwd
+   12  history
+   13  man pwd
+   14  touch giri
+   15  cat giri 
+   16  vi giri
+   17  cat giri 
+   18  more giri 
+   19  ls
+   20  mv giri tarun
+   21  ls
+   22  hostname
+   23  hostname -i
+   24  uname
+   25  uname -a
+   26  free
+   27  free -h
+   28  df -h
+   29  free
+   30  free -h
+   31  free -m
+   32  free -g
+   33  history
