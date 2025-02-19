@@ -1,0 +1,37 @@
+ 1  cd /
+    2  pwd
+    3  cd /tmp/
+    4  mkdir day2
+    5  cd day2/
+    6  ls
+    7  touch file
+    8  ls
+    9  mkdir folder
+   10  ls
+   11  hostname
+   12  date
+   13  touch lalit
+   14  ls
+   15  whoami
+   16  free -h
+   17  uname -a
+   18  df -h
+   19  vi firstscript.sh
+   20  cat firstscript.sh 
+   21  ./firstscript.sh
+   22  ls -l
+   23  chmod +x firstscript.sh
+   24  ls -l
+   25  ./firstscript.sh
+   26  clear
+   27  ./firstscript.sh
+   28  ls -l
+   29  ls
+   30  ssh-keygen
+   31  cd /root/.ssh/
+   32  ls
+   33  cat id_rsa.pub
+   34  ls
+   35  cd /tmp/day2/
+   36  vi ram
+   37  history
