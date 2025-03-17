@@ -1,0 +1,9 @@
+echo "# lakshmanproject" >> README.md
+git init            .git folder 
+git status
+git add README.md      traching by git will start 
+git add *                     -- multile file 
+git commit -m "first commit"
+git branch -M main      - master will be chnaged to main
+git remote add origin https://github.com/vikas4cloud/lakshmanproject.git
+git push -u origin main
