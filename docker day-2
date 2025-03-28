@@ -1,0 +1,237 @@
+dwnd Hypervier 
+Ubuntu  & Centos VDI... 
+
+
+
+--------------
+
+sudo -i
+apt-get update
+docker -v
+
+Scripted 
+
+
+1. download the script
+#
+#   $ curl -fsSL https://get.docker.com -o install-docker.sh
+#
+# 2. verify the script's content
+#
+#   $ cat install-docker.sh
+#
+# 3. run the script with --dry-run to verify the steps it executes
+#
+#   $ sh install-docker.sh --dry-run
+#
+# 4. run the script either as root, or using sudo to perform the installation.
+#
+#   $ sudo sh install-docker.sh
+#
+
+sudo -i
+curl -fsSL https://get.docker.com -o get-docker.sh
+sh get-docker.sh
+
+
+Docker version 28.0.4
+
+------------
+
+Creating our first container  “hello-world”
+
+Step – 1  Run the below container were docker engine installed…
+
+docker ps -a
+docker images
+go to docker hub and search hello-world     or 
+https://hub.docker.com/_/hello-world
+
+Step – 2 Pull the first image hello-world 
+	docker pull hello-world
+
+Step -3  verify the image 
+docker images
+docker ps -a
+
+Step -4 Run the hello-world image and make container…
+	docker run hello-world
+	
+	
+	
+	Pull --- imgae will downloaded 
+	run --  download + image will be come container  +
+	
+	
+	
+	-------------------
+	
+	
+	Our Second container   “ubuntu os”
+
+Step 1 – Pull ubuntu image from docker hub
+
+docker images
+
+Step 2  - Run the image in interactive mode to make a container
+	
+	Docker pull 
+	docker run -it ubuntu   
+
+Step 3 Come out from the container with exit command 
+
+Step 4 – Start a container 
+	docker start <container ID>
+	
+Step -5  logged into the bash of the  container 
+	docker exec -it <Container ID> bin/bash
+
+Step -6  Your container is ready to play any application try to install GIT in ubuntu container
+apt update 	
+apt install git-all 
+apt install ansible
+apt install python
+
+
+---------
+ps
+ubuntu will working or not 
+
+Exited ...211512031cb2  
+
+can i make this running ?  yes  how ? 
+
+
+
+
+docker start 211512031cb2
+
+run vs exec 
+
+----------
+
+Application 1:-     pull and run nginx application with docker..
+
+
+Step 1 Pull nginx image 
+
+	docker pull nginx
+	docker images 
+	
+	
+docker images
+Step 2 run nginx image and create a container.
+
+	docker run nginx 
+
+Step 3 now the problem is this is web application so need to open a port and user via web browser 
+ 
+Step 4 run a container with port 80 
+
+	docker run -p 80:80 nginx
+	
+	
+	-----port --- 
+	
+	docker run nginx
+	vs
+	docker run -p 80:80 nginx
+	
+	
+	-----------
+	
+	 Application 2:-     Create an webserver (nginx) application with docker..
+
+Step 1  pull the nginx (webserver ) from docker hub and run on port 80 
+
+docker run -p 80:80 nginx
+
+docker run --name docker-nginx -p 80:80 nginx
+
+Step 2  verify and play with nginx container
+
+docker ps
+docker stop docker-nginx
+docker rm docker-nginx
+
+Step 3 create a web page from step 5
+
+mkdir -p ~/docker-nginx/html
+cd ~/docker-nginx/html
+vi index.html
+
+
+Step 4 run the application on port 80 with the volume attached of our html file
+docker run --name docker-nginx -p 80:80 -d -v ~/docker-nginx/html:/usr/share/nginx/html nginx
+
+
+-----------
+
+index.html
+
+Step 5 :- HTML File 
+
+<html>
+  <head>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-MfvZlkHCEqatNoGiOXveE8FIwMzZg4W85qfrfIFBfYc= sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+    <title>Docker nginx Tutorial</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Hello Learning team batch33 with Devanshau , Debyan , sabir , Nisha</h1>
+      <p>This nginx page is brought to you by Docker in front of sri ram arun ravi naveen sabita </p>
+    </div>
+  </body>
+</html>
+
+--------------
+
+docker run
+ --name docker-nginx
+ -p 80:80
+ -d
+ -v ~/docker-nginx/html:/usr/share/nginx/html 
+ nginx
+ 
+ 
+
+docker run --name docker-nginx -p 80:80 -d -v ~/docker-nginx/html:/usr/share/nginx/html nginx
+
+------google html leraning code
+
+Step 5 :- HTML File 
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<link rel="shortcut icon" type="image/png" href="favicon.ico"/>
+		<title>Google</title>
+	</head>
+	<body>
+		<header>
+			<a href="https://plus.google.com/u/0/up/follow">+Lara</a>
+			<a href="https://mail.google.com">Gmail</a>
+			<a href="https://www.google.com/imghp?hl=en&tab=wi&ei=Ox1NVMXuJYO3yATCjoFA&ved=0CAQQqi4oAg">Images</a>
+			<img id="products" src="products.png"/>
+			<img id="bell" src="bell.png"/>
+			<img id="share" src="share.png"/>
+			<img id="lara" class="headerpics" src="http://lh3.googleusercontent.com/-zkPWifjxy1M/AAAAAAAAAAI/AAAAAAAAAAA/7pAALFnncq4/s32-c/photo.jpg"/>
+		</header>
+		<div>
+			<img src="https://www.google.com/images/srpr/logo11w.png"/>
+			<form name="google" action="#" method="POST"><br>
+				<input type="search" class="search"><br>
+				<input type="submit" class="button" name="submit" value="Google Search">
+				<input type="submit" class="button" name="lucky" value="I'm Feeling Lucky">
+			</form>
+		</div>
+		<footer>
+			<a class="leftlinks" href="https://www.google.com/intl/en/ads/?fg=1">Advertising</a>
+			<a class="leftlinks" href="https://www.google.com/services/?fg=1">Business</a>
+			<a class="leftlinks" href="https://www.google.com/intl/en/about/">About</a>
+			<a class="rightlinks" href="https://www.google.com/preferences?hl=en">Settings</a>
+			<a class="rightlinks" href="https://www.google.com/intl/en/policies/?fg=1">Privacy & Terms</a>
+		</footer>
+	</body>
+</html>
