@@ -1,0 +1,41 @@
+root@docker4thday:~# history
+    1  curl -fsSL https://get.docker.com -o install-docker.sh
+    2  sh install-docker.sh
+    3  docker -v
+    4  docker run -it -d -p 8080:8080 jenkins/jenkins:latest 
+    5  docker ps
+    6  Docker images
+    7  docker images
+    8  docker commit  cf91b6c52215  batch-38jenkinsinage
+    9  docker images
+   10  docker save batch-38jenkinsinage > mybackuptos3.tar
+   11  ls
+   12  Docker ps
+   13  docker ps
+   14  docker inspect musing_satoshi
+   15  docker logs musing_satoshi
+   16  docker logs -f musing_satoshi
+   17  docker ps
+   18  docker stats cf91b6c52215
+   19  docker top cf91b6c52215
+   20  docker stats musing_satoshi
+   21  docker system df
+   22  docker image prune -a
+   23  docker system df
+   24  docker system prune
+   25  history
+
+
+      FROM ubuntu
+MAINTAINER clouddevopshub@gmail.com
+RUN apt-get update
+RUN apt-get install nginx -y
+CMD [“echo”,”Image created”]
+
+
+      
+
+docker inspect <container name>
+docker logs <container name> 
+docker stats <container ID>  or <container name>
+docker top <container name>
