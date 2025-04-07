@@ -1,0 +1,156 @@
+  Machine type: g1-small instead of e2-medium
+   2 vCPU (1/2 shared physical core) and 4 GB RAM.
+   
+  Boot disk size: 32GB instead of 30GB boot disk size
+  
+  Per node 
+  
+  3
+  
+  kubectl get nodes  -- node detail's 
+  kubectl get nodes -o wide
+  
+  -----------
+  
+  Info 
+  
+kubectl cluster-info
+kubectl config get-contexts
+
+GET - to get the details
+kubectl get all
+kubectl get namespaces , ns
+kubectl get nodes , no
+kubectl get pods , po
+kubectl get deployments  ,deploy
+kubectl get replicaset , rs 
+kubectl get service , svc
+
+Describe 
+kubectl describe no
+kubectl describe po
+kubectl describe rs
+kubectl describe svc
+
+Delete 
+kubectl delete no
+kubectl delete po
+kubectl delete rs 
+kubectl delete svc 
+
+Logs 
+
+kubeclt create ns firoz
+
+command's  & 
+-----------
+
+YAML languare 
+
+1ˢᵗ      Via Command
+kubectl get ns     
+kubectl create ns dev
+or
+
+kubectl create -f shridevi.yaml
+
+2ⁿᵈ      Via Yaml 
+#nsdev.yaml
+--- 
+apiVersion: v1
+kind: Namespace
+metadata: 
+  name: dev
+  
+  -----------
+  
+  Github -> git clone 
+  
+  yaml  - > NS once - 
+  
+  -------
+  
+  yaml Code + kubectl create -f shridevi.yaml
+  kubectl create ns firoz
+  
+  --- 
+  
+  Use case why NS is required ?   - 
+  
+  PROJECT 
+Cluster ? 
+3   
+ 
+  DEv , QA , PRe Prod , Performance , , Client env , PRE , PROD 
+  
+  Monoring NS  - Promthu grafana , 
+  
+  
+  PROD , 
+  
+  
+  
+  Pod creation 
+
+kubectl run nginx  --image=nginx:1.16
+
+Result ?  POD , 
+
+
+--------
+
+kubectl create deployment nginxdeploy --image=nginx   
+repica 3 
+
+
+nginxdeploy-7fcd5d7d8b-5kps5   1/1     Running   0          57s
+nginxdeploy-7fcd5d7d8b-xlnh9   1/1     Running   0          57s
+nginxdeploy-7fcd5d7d8b-xvz62   1/1     Running   0          106s
+
+
+kubectl delete po nginxdeploy-7fcd5d7d8b-5kps5
+
+Deploy - Identical pod ....!!!
+
+data - Volume 
+
+
+------------
+
+
+ 494  kubectl get nodes
+  495  kubectl get po
+  496  kubectl get svc
+  497  kubectl run jenkins  --image=jenkins/jenkins:lts
+  498  kubectl get po
+  499  kubectl get svc
+  500  cat /var/jenkins_home/secrets/initialAdminPassword
+  501  gcloud container clusters get-credentials my-first-cluster-1 --zone us-central1-c --project march22paid
+  502  kubectl get nodes
+  503  kubectl get nodes -o wide
+  504  kubectl cluster-info
+  505  kubectl config get-contexts
+  506  kubectl get all
+  507  kubectl get namespaces
+  508  kubectl create ns firoz
+  509  kubectl get namespaces
+  510  vi shridevi.yaml
+  511  kubectl create -f shridevi.yaml
+  512  kubectl get namespaces
+  513  kubectl describe no
+  514  '
+
+
+
+
+  515  clear
+  516  kubectl describe no
+  517  kubectl run nginx  --image=nginx:1.16
+  518  kubectl get po
+  519  kubectl get svc
+  520  kubectl create deployment nginxdeploy --image=nginx
+  521  kubectl get deploy
+  522  kubectl get po
+  523  kubectl delete po nginxdeploy-7fcd5d7d8b-5kps5
+  524  kubectl get po
+  525  history
