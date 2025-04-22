@@ -1,0 +1,238 @@
+#!bin/bash
+ls
+touch abc
+pwd
+mkdir folder
+df -h 
+
+
+
+--------Example 1
+
+#!/bin/bash
+echo "This is a shell script"  
+ls
+echo "I am done running ls command"  
+
+777 
+
++x or 755 
+
+
+3rd 
+
+
+Example Monitoring script  
+
+#!/bin/bash  
+echo "This is a shell script"
+echo "the hostname of this machine is "
+hostname 
+hostname -i
+ps
+echo "memory used in the machine"
+free
+echo "disk used in the machine "
+df -h
+echo "the above information from the machine"  
+
+
+
+---------
+
+#!/bin/bash
+# Add two numeric value
+((sum=10-5))
+#Print the result
+echo $sum
+
+
+
+-----------
+
+
+
+
+#!/bin/bash 
+echo "Hello there"
+echo "My name is $(whoami)"
+echo "Nice to meet you"
+
+-----------
+
+Example 5 Get User Input from the command line 
+
+
+#!/bin/bash
+echo "Enter Your email"
+read email
+echo "Welcome $email to Linux Learning session"
+
+
+------
+
+Example 1
+
+#!/bin/bash  
+SOMEVAR='this is my day-46 of batch-38'  
+echo "$SOMEVAR"
+
+
+----CW
+
+vi file.sh
+#!/bin/bash
+touch info
+date
+w
+ps
+./file.sh > info
+
+Chmod +x file.sh
+ 
+./file.sh > info
+
+-------
+
+Santosh Kumar 9:10
+
+
+#!/bin/bash
+date > info.file
+w >> info.file
+ps aux >> info.file
+
+date > first time 
+>> for apneding
+
+----------
+
+Suresh Dike 9:09
+#!/bin/bash
+
+# 1. Get current time and date
+echo "Current Date and Time:" > info
+date >> info
+
+# 2. List logged-in users
+echo -e "\nLogged In Users:" >> info
+who >> info
+
+# 3. Show running processes
+echo -e "\nRunning Processes:" >> info
+ps aux >> info
+
+# 4. Final message
+echo "System information saved to 'info' file."
+
+
+-----------
+
+date > info.txt        
+
+------------
+
+create Shell Script To Display The Running Process
+
+ps
+
+ Running On The System 
+ 
+ Every 30 Seconds For 3 Times Only
+ 
+ execute ps for 3 times in 30 sec gap
+ 
+ ps
+ for loop for 3 times 
+ sleep 30 
+ 
+ 
+#!/bin/bash
+# Write a shell script to display the process running on the system for every
+# 30 seconds, but only for 3 times.
+# -------------------------------------------------------------------------
+# -------------------------------------------------------------------------
+# 
+# for loop 3 times
+for r in 1 2 3
+do
+	#see every process on the system
+	echo "**************************** x^x^x ****************************"
+	ps
+	echo "**************************** x^x^x ****************************"
+	#sleep for 30 seconds
+	sleep 3
+        # clean
+done
+
+
+
+git commit && git push    --                 
+git commit || echo 
+
+---------------
+
+
+#!/bin/bash
+
+
+
+# Sample script written for Part 4 of the RHCE series
+# This script will return the following set of system information:
+# -Hostname information:
+echo -e "\e[31;43m***** HOSTNAME INFORMATION *****\e[0m"
+hostnamectl
+echo ""
+# -File system disk space usage:
+echo -e "\e[31;43m***** FILE SYSTEM DISK SPACE USAGE *****\e[0m"
+df -h
+echo ""
+# -Free and used memory in the system:
+echo -e "\e[31;43m ***** FREE AND USED MEMORY *****\e[0m"
+free
+echo ""
+# -System uptime and load:
+echo -e "\e[31;43m***** SYSTEM UPTIME AND LOAD *****\e[0m"
+uptime
+echo ""
+# -Logged-in users:
+echo -e "\e[31;43m***** CURRENTLY LOGGED-IN USERS *****\e[0m"
+who
+echo ""
+# -Top 5 processes as far as memory usage is concerned
+echo -e "\e[31;43m***** TOP 5 MEMORY-CONSUMING PROCESSES *****\e[0m"
+ps -eo %mem,%cpu,comm --sort=-%mem | head -n 6
+echo ""
+echo -e "\e[1;32mDone.\e[0m"
+
+
+
+
+--------------
+
+
+echo -e "\e[31;43m***** HOSTNAME INFORMATION *****\e[0m"
+
+\e[0;30m	Black
+\e[6;30m	Black  bold 
+
+
+#!/bin/bash  
+echo "This is a shell script"
+echo "the hostname of this machine is "
+hostname 
+hostname -i
+ps
+echo "memory used in the machine"
+free
+echo "disk used in the machine "
+df -h
+echo "the above information from the machine"  
+
+
+------------
+
+#!/bin/bash
+echo "Printing text with newline"
+echo -n "Printing text without newline"
+echo -e "\nRemoving \t backslash \t characters\n"
